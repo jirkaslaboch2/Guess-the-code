@@ -58,8 +58,18 @@ loselayout= QtWidgets.QVBoxLayout()
 wintext = QtWidgets.QLabel("Congratulations! You guessed the code correctly!")
 winlayout.addWidget(wintext)
 
+winclose = QtWidgets.QPushButton("Close")
+winclose.clicked.connect(winwin.close)
+winclose.clicked.connect(main.close)
+winlayout.addWidget(winclose)
+
 losetext = QtWidgets.QLabel("Access denied! The code was incorrect.")
 loselayout.addWidget(losetext)
+
+loseclose = QtWidgets.QPushButton("Close")
+loseclose.clicked.connect(losewin.close)
+loseclose.clicked.connect(main.close)
+loselayout.addWidget(loseclose)
 
 winwin.setLayout(winlayout)
 main.setLayout(layout)
@@ -147,6 +157,22 @@ losewin.setStyleSheet("""
         font-size: 36px;
         font-weight: bold;
         background-color: #FF0000;
+    }
+""")
+
+loseclose.setStyleSheet("""
+    QWidget {
+        font-size: 36px;
+        font-weight: bold;
+        background-color: #ffffff;
+    }
+""")
+
+winclose.setStyleSheet("""
+    QWidget {
+        font-size: 36px;
+        font-weight: bold;
+        background-color: #ffffff;
     }
 """)
 
